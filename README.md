@@ -107,4 +107,6 @@ The original 68000 code contained three labeled `; Vulnerable!` comments. All th
 | Negative + Positive | -5, 5 | 0 |
 | Both negative | -3, -4 | -7 |
 | Large values | 1000000, 2000000 | 3000000 |
-| Overflow detection | MAX_LONG, 1 | 
+| Overflow detection | 9223372036854775807, 1 | Error: Overflow detected. |
+| Too large number | 99999999999999999999 | Error: Invalid input. |
+| Running sum (3 iters) | (2,3), (10,5), (7,1) | 28 |
