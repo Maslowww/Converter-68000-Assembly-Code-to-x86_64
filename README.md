@@ -16,6 +16,12 @@ The x86_64 port replicates this functionality exactly while fixing all security 
 
 ---
 
+## Demo
+
+[![Assembly Project Demo](https://img.youtube.com/vi/qQPzatVcbsk/0.jpg)](https://www.youtube.com/watch?v=qQPzatVcbsk)
+
+---
+
 ## Files
 
 | File | Description |
@@ -39,7 +45,7 @@ ld prog.o -o prog
 ### Unit tests
 ```bash
 nasm -f elf64 prog.asm -o prog.o
-gcc test_program.c prog.o -o test_program
+gcc test_program.c prog.o -o test_program -no-pie -nostartfiles -e main
 ./test_program
 ```
 
@@ -101,5 +107,4 @@ The original 68000 code contained three labeled `; Vulnerable!` comments. All th
 | Negative + Positive | -5, 5 | 0 |
 | Both negative | -3, -4 | -7 |
 | Large values | 1000000, 2000000 | 3000000 |
-| Overflow detection | MAX_LONG, 1 | -1 (overflow signal) |
-| Running sum (3 iters) | (2,3), (10,5), (7,1) | 28 |
+| Overflow detection | MAX_LONG, 1 | 
